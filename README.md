@@ -62,13 +62,13 @@ sudo pip install tzlocal
 
 When we collect all these log files, Logstash takes them as input and parses and extracts key words such as username, password, IP,and timing from these logs. Logstash then sends these keywords to elastic search. Elasticsearch stores them and sends them to Kibana to be viewed in charts and graphs according to these keywords.
 
-![Alt text](https://ibb.co/gvmwi7 "ELK")
+![Alt text](https://image.ibb.co/jco937/xsweet_image.png "ELK")
 
 ##Overallsystem
 
 An attacker tries to compromise our system with SSH bruteforcing, whether he connects or not everything is logged, if he gains access,the commands used inside the session are logged. After everything is logged, these log files are fetched to Logstash. Logstash takes care of them as mentioned in the previous model routing.
 
-![Alt text](https://ibb.co/kZ5BGS "ELK")
+![Alt text](https://image.ibb.co/mho937/xsweet_image2.png "ELK")
 
 ## Demo
 
