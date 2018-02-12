@@ -16,16 +16,16 @@ After I rented some cloud servers online to test my projects on them,  I  saw a 
 
 ## Features
 
--Used Logstash, Elasticsearch and Kibana to search and visualize the logged data in a neat way.
--Fake filesystem with the ability to add/remove files. A full fake filesystem resembling an Ubuntu 16.04 installation is included.
--Possibility of adding fake file contents so the attacker can cat files such as /etc/passwd. Only minimal file contents are included.
--Attempts and Session logs stored in an UML Compatible format for easy replay with original timings.
+- Used Logstash, Elasticsearch and Kibana to search and visualize the logged data in a neat way.
+- Fake filesystem with the ability to add/remove files. A full fake filesystem resembling an Ubuntu 16.04 installation is included.
+- Possibility of adding fake file contents so the attacker can cat files such as /etc/passwd. Only minimal file contents are included.
+- Attempts and Session logs stored in an UML Compatible format for easy replay with original timings.
 
 ## Docker
 
 Xsweet uses Docker to be deployed, Configured, and installed on any machine whether its  Linux , Mac, Windows... with one simple command . I created an Ubuntu image with docker, containing the honeypot and all its visualization applications needed  (Elasticsearch,  Logstash and  Kibana) and the configuration files needed to run the whole  system on your machine without any errors while installing , due to different OS systems or some python  utilities or dependencies not being installed on your machine. Just Run This command and you are good to go without downloading anything:
 
-'''sudo docker run -p 22:2222 ousamaag/docker-xsweet'''
+`sudo docker run -p 22:2222 ousamaag/docker-xsweet`
 
 Note: Make sure you  don’t have any  SSH servers running on your system or the app  won’t work because it runs on port 22.
 
@@ -54,9 +54,9 @@ sudo pip install tzlocal
 
 **All the attacker’s interaction with the honeypot whether he got access or not is logged in three files:**
 
-- 'attempts.txt': stores the (username:password) combination with the timing.
-- 'victim-ActualIPofTheAttacker.txt'(Example: victim-10.10.10.10.txt): is the file where the executed commands of the attacker are logged after gaining access to the honeypot.
-- 'xsweet.log': the file where the IP of the attacker and the key exchage is logged.
+- `attempts.txt`: stores the (username:password) combination with the timing.
+- `victim-ActualIPofTheAttacker.txt`(Example: victim-10.10.10.10.txt): is the file where the executed commands of the attacker are logged after gaining access to the honeypot.
+- `xsweet.log`: the file where the IP of the attacker and the key exchage is logged.
 
 **If you downloaded Xsweet with Docker, you'll get it automatically configured with Kibana, Logstash and Elastic Search.**
 
