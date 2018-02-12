@@ -31,7 +31,7 @@ Note: Make sure you  don’t have any  SSH servers running on your system or the
 
 ## Requirements
 
-'''
+```
 sudo apt-get install python-minimal
 sudo apt-get install python-pip
 sudo apt-get install build-essential
@@ -45,7 +45,7 @@ sudo pip install virtualenv
 sudo pip install twisted
 sudo pip install cryptography
 sudo pip install tzlocal
-'''
+```
 
 **You dont need these requirements if you choose to install with Docker**
 
@@ -64,13 +64,13 @@ When we collect all these log files, Logstash takes them as input and parses and
 
 ![Alt text](https://image.ibb.co/jco937/xsweet_image.png "ELK")
 
-##Overallsystem
+## Overall System
 
 An attacker tries to compromise our system with SSH bruteforcing, whether he connects or not everything is logged, if he gains access,the commands used inside the session are logged. After everything is logged, these log files are fetched to Logstash. Logstash takes care of them as mentioned in the previous model routing.
 
 ![Alt text](https://image.ibb.co/mho937/xsweet_image2.png "ELK")
 
-## Demo
+## Video Demo
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SGwpJwFwJ-A/0.jpg)](https://www.youtube.com/watch?v=SGwpJwFwJ-A)
 
