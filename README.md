@@ -21,13 +21,13 @@ After I rented some cloud servers online to test my projects on them,  I  saw a 
 - Possibility of adding fake file contents so the attacker can cat files such as /etc/passwd. Only minimal file contents are included.
 - Attempts and Session logs stored in an UML Compatible format for easy replay with original timings.
 
-## Docker
+## Installation
 
-Xsweet uses Docker to be deployed, Configured, and installed on any machine whether its  Linux , Mac, Windows... with one simple command . I created an Ubuntu image with docker, containing the honeypot and all its visualization applications needed  (Elasticsearch,  Logstash and  Kibana) and the configuration files needed to run the whole  system on your machine without any errors while installing , due to different OS systems or some python  utilities or dependencies not being installed on your machine. Just Run This command and you are good to go without downloading anything:
-
-`sudo docker run -p 22:2222 ousamaag/docker-xsweet`
-
-Note: Make sure you  don’t have any  SSH servers running on your system or the app  won’t work because it runs on port 22.
+- You need first to install all the dependencies and utilities mentioned below in the Requirements section.
+- Clone the repository git clone `https://github.com/techouss/xsweet.git` and navigate to the direcotry `cd xsweet`
+- Strat xsweet `python xsweet.py &`
+- To run it on port 22 because it is by default on port 2222
+`sudo iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222`
 
 ## Requirements
 
@@ -50,6 +50,16 @@ sudo pip install tzlocal
 **You dont need these requirements if you choose to install with Docker**
 
 
+## Docker
+
+Xsweet uses Docker to be deployed, Configured, and installed on any machine whether its  Linux , Mac, Windows... with one simple command . I created an Ubuntu image with docker, containing the honeypot and all its visualization applications needed  (Elasticsearch,  Logstash and  Kibana) and the configuration files needed to run the whole  system on your machine without any errors while installing , due to different OS systems or some python  utilities or dependencies not being installed on your machine. Just Run This command and you are good to go without downloading anything:
+
+`sudo docker run -p 22:2222 ousamaag/docker-xsweet`
+
+**Note: Make sure you  don’t have any SSH servers running on your system or the app won’t work because it also runs on port 22.**
+
+
+
 ## Files of interest
 
 **All the attacker’s interaction with the honeypot whether he got access or not is logged in three files:**
@@ -62,17 +72,17 @@ sudo pip install tzlocal
 
 When we collect all these log files, Logstash takes them as input and parses and extracts key words such as username, password, IP,and timing from these logs. Logstash then sends these keywords to elastic search. Elasticsearch stores them and sends them to Kibana to be viewed in charts and graphs according to these keywords.
 
-![Alt text](https://image.ibb.co/jco937/xsweet_image.png "ELK")
+![files on interest](https://image.ibb.co/jco937/xsweet_image.png "ELK")
 
 ## Overall System
 
 An attacker tries to compromise our system with SSH bruteforcing, whether he connects or not everything is logged, if he gains access,the commands used inside the session are logged. After everything is logged, these log files are fetched to Logstash. Logstash takes care of them as mentioned in the previous model routing.
 
-![Alt text](https://image.ibb.co/mho937/xsweet_image2.png "ELK")
+![Overall Xsweet system](https://image.ibb.co/mho937/xsweet_image2.png "ELK")
 
 ## Video Demo
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SGwpJwFwJ-A/0.jpg)](https://www.youtube.com/watch?v=SGwpJwFwJ-A)
+[![xsweet demo youtube video](https://img.youtube.com/vi/SGwpJwFwJ-A/0.jpg)](https://www.youtube.com/watch?v=SGwpJwFwJ-A)
 
 
 
