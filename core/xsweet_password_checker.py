@@ -43,10 +43,14 @@ class HoneypotPasswordChecker:
             return defer.fail(error.UnauthorizedLogin())
         return defer.fail(error.UnhandledCredentials())
 
+
     def checkUserPass(self, username, password):
-        if username=="william" and password == "william":
-            return True
-	elif username == "root" and password == "root":
-	    return True
-        else:
-            return False
+        filepath = 'list.txt'  
+        with open(filepath) as fp:  
+            line = fp.readline().strip("\n")
+            while line:
+                user, passw = line.split(":")
+                if user==username and passw == password:
+                    return True
+                line = fp.readline().strip("\n")
+        return False

@@ -1,0 +1,749 @@
+2018-02-14 12:24:10+0200 [-] Log opened.
+2018-02-14 12:24:10+0200 [-] SSHFactory starting on 2222
+2018-02-14 12:24:10+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f0b7b437170>
+2018-02-14 12:24:19+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 12:24:19+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 12:24:19+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:24:19+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:24:19+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 12:24:19+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 12:24:19+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 12:24:23+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 12:24:23+0200 [-] username: support is compared with root and password:support is compared withroot
+2018-02-14 12:24:23+0200 [-] 
+2018-02-14 12:24:23+0200 [-] username: support is compared with ubuntu and password:support is compared withubuntu
+2018-02-14 12:24:23+0200 [-] 
+2018-02-14 12:24:23+0200 [-] username: support is compared with support and password:support is compared withsupport
+2018-02-14 12:24:23+0200 [-] 
+2018-02-14 12:24:23+0200 [-] username: support is compared with test and password:support is compared withtest
+2018-02-14 12:24:23+0200 [-] 
+2018-02-14 12:24:23+0200 [-] username: support is compared with admin and password:support is compared withadmin
+2018-02-14 12:24:23+0200 [-] 
+2018-02-14 12:24:24+0200 [-] 'support' failed auth 'password'
+2018-02-14 12:24:24+0200 [-] Traceback (most recent call last):
+	  File "/usr/lib/python2.7/dist-packages/twisted/conch/ssh/userauth.py", line 180, in ssh_USERAUTH_REQUEST
+	    d = self.tryAuth(method, user, rest)
+	  File "/usr/lib/python2.7/dist-packages/twisted/conch/ssh/userauth.py", line 153, in tryAuth
+	    ret = f(data)
+	  File "/usr/lib/python2.7/dist-packages/twisted/conch/ssh/userauth.py", line 311, in auth_password
+	    return self.portal.login(c, None, interfaces.IConchUser).addErrback(
+	  File "/usr/lib/python2.7/dist-packages/twisted/cred/portal.py", line 119, in login
+	    return maybeDeferred(self.checkers[i].requestAvatarId, credentials
+	--- <exception caught here> ---
+	  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 150, in maybeDeferred
+	    result = f(*args, **kw)
+	  File "/root/xsweet/core/xsweet_password_checker.py", line 40, in requestAvatarId
+	    if self.checkUserPass(credentials.username, credentials.password):
+	  File "/root/xsweet/core/xsweet_password_checker.py", line 59, in checkUserPass
+	    return false
+	exceptions.NameError: global name 'false' is not defined
+	
+2018-02-14 12:24:58+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 12:25:01+0200 [-] Log opened.
+2018-02-14 12:25:01+0200 [-] Traceback (most recent call last):
+2018-02-14 12:25:01+0200 [-]   File "xsweet.py", line 67, in <module>
+2018-02-14 12:25:01+0200 [-]     reactor.listenTCP(2222, sshFactory)
+2018-02-14 12:25:01+0200 [-]   File "/usr/lib/python2.7/dist-packages/twisted/internet/posixbase.py", line 495, in listenTCP
+2018-02-14 12:25:01+0200 [-]     p.startListening()
+2018-02-14 12:25:01+0200 [-]   File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 980, in startListening
+2018-02-14 12:25:01+0200 [-]     raise CannotListenError(self.interface, self.port, le)
+2018-02-14 12:25:01+0200 [-] twisted.internet.error.CannotListenError: Couldn't listen on any:2222: [Errno 98] Address already in use.
+2018-02-14 12:25:20+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 12:25:20+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 12:25:20+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f0b7b437170>
+2018-02-14 12:25:20+0200 [-] Main loop terminated.
+2018-02-14 12:25:26+0200 [-] Log opened.
+2018-02-14 12:25:26+0200 [-] SSHFactory starting on 2222
+2018-02-14 12:25:26+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fad6bd87170>
+2018-02-14 12:25:34+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 12:25:34+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 12:25:34+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:25:34+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:25:34+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 12:25:34+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 12:25:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 12:25:38+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 12:25:38+0200 [-] username: support is compared with root and password:support is compared withroot
+2018-02-14 12:25:38+0200 [-] 
+2018-02-14 12:25:38+0200 [-] username: support is compared with ubuntu and password:support is compared withubuntu
+2018-02-14 12:25:38+0200 [-] 
+2018-02-14 12:25:38+0200 [-] username: support is compared with support and password:support is compared withsupport
+2018-02-14 12:25:38+0200 [-] 
+2018-02-14 12:25:38+0200 [-] username: support is compared with test and password:support is compared withtest
+2018-02-14 12:25:38+0200 [-] 
+2018-02-14 12:25:38+0200 [-] username: support is compared with admin and password:support is compared withadmin
+2018-02-14 12:25:38+0200 [-] 
+2018-02-14 12:25:39+0200 [-] 'support' failed auth 'password'
+2018-02-14 12:25:39+0200 [-] unauthorized login: 
+2018-02-14 12:47:05+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 12:47:05+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 12:47:05+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fad6bd87170>
+2018-02-14 12:47:05+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 12:47:05+0200 [-] Main loop terminated.
+2018-02-14 12:48:15+0200 [-] Log opened.
+2018-02-14 12:48:15+0200 [-] SSHFactory starting on 2222
+2018-02-14 12:48:15+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f4d229401b8>
+2018-02-14 12:48:21+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 12:48:21+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 12:48:21+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:48:21+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:48:21+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 12:48:21+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 12:48:21+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 12:48:23+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 12:48:23+0200 [-] username: support is compared with root and password:support is compared with root
+2018-02-14 12:48:23+0200 [-] 
+2018-02-14 12:48:23+0200 [-] username: support is compared with ubuntu and password:support is compared with ubuntu
+2018-02-14 12:48:23+0200 [-] 
+2018-02-14 12:48:23+0200 [-] username: support is compared with support and password:support is compared with support
+2018-02-14 12:48:23+0200 [-] 
+2018-02-14 12:48:23+0200 [-] username: support is compared with test and password:support is compared with test
+2018-02-14 12:48:23+0200 [-] 
+2018-02-14 12:48:23+0200 [-] username: support is compared with admin and password:support is compared with admin
+2018-02-14 12:48:23+0200 [-] 
+2018-02-14 12:48:24+0200 [-] 'support' failed auth 'password'
+2018-02-14 12:48:24+0200 [-] unauthorized login: 
+2018-02-14 12:49:05+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 12:49:34+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 12:49:34+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 12:49:34+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f4d229401b8>
+2018-02-14 12:49:34+0200 [-] Main loop terminated.
+2018-02-14 12:49:37+0200 [-] Log opened.
+2018-02-14 12:49:37+0200 [-] SSHFactory starting on 2222
+2018-02-14 12:49:37+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fda018781b8>
+2018-02-14 12:49:42+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 12:49:42+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 12:49:42+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:49:42+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:49:42+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 12:49:42+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 12:49:42+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 12:49:44+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 12:49:45+0200 [-] 'support' failed auth 'password'
+2018-02-14 12:49:45+0200 [-] unauthorized login: 
+2018-02-14 12:50:48+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 12:50:48+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 12:50:48+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 12:50:48+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fda018781b8>
+2018-02-14 12:50:48+0200 [-] Main loop terminated.
+2018-02-14 12:50:51+0200 [-] Log opened.
+2018-02-14 12:50:51+0200 [-] SSHFactory starting on 2222
+2018-02-14 12:50:51+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f9d4d25a1b8>
+2018-02-14 12:50:55+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 12:50:55+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 12:50:55+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:50:55+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:50:55+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 12:50:55+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 12:50:55+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 12:50:58+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 12:50:58+0200 [-] im in else
+2018-02-14 12:50:58+0200 [-] im in else
+2018-02-14 12:50:58+0200 [-] im in else
+2018-02-14 12:50:58+0200 [-] im in else
+2018-02-14 12:50:58+0200 [-] im in else
+2018-02-14 12:50:59+0200 [-] 'support' failed auth 'password'
+2018-02-14 12:50:59+0200 [-] unauthorized login: 
+2018-02-14 12:51:57+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 12:51:57+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 12:51:57+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 12:51:57+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f9d4d25a1b8>
+2018-02-14 12:51:57+0200 [-] Main loop terminated.
+2018-02-14 12:52:00+0200 [-] Log opened.
+2018-02-14 12:52:00+0200 [-] SSHFactory starting on 2222
+2018-02-14 12:52:00+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f97c90061b8>
+2018-02-14 12:52:05+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 12:52:05+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 12:52:05+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:52:05+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 12:52:05+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 12:52:05+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 12:52:05+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 12:52:07+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 12:52:07+0200 [-] im in else
+2018-02-14 12:52:07+0200 [-] im in else
+2018-02-14 12:52:07+0200 [-] im in else
+2018-02-14 12:52:07+0200 [-] im in else
+2018-02-14 12:52:07+0200 [-] im in else
+2018-02-14 12:52:08+0200 [-] 'support' failed auth 'password'
+2018-02-14 12:52:08+0200 [-] unauthorized login: 
+2018-02-14 13:15:26+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 13:15:36+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 13:15:36+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 13:15:36+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f97c90061b8>
+2018-02-14 13:15:36+0200 [-] Main loop terminated.
+2018-02-14 13:46:39+0200 [-] Log opened.
+2018-02-14 13:46:39+0200 [-] SSHFactory starting on 2222
+2018-02-14 13:46:39+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f982c9d11b8>
+2018-02-14 13:46:45+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 13:46:45+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 13:46:45+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:46:45+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:46:45+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 13:46:45+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 13:46:45+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 13:46:47+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 13:46:48+0200 [-] 'support' failed auth 'password'
+2018-02-14 13:46:48+0200 [-] unauthorized login: 
+2018-02-14 13:46:55+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 13:46:56+0200 [-] 'support' failed auth 'password'
+2018-02-14 13:46:56+0200 [-] unauthorized login: 
+2018-02-14 13:46:57+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 13:47:13+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 13:47:13+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 13:47:13+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f982c9d11b8>
+2018-02-14 13:47:13+0200 [-] Main loop terminated.
+2018-02-14 13:47:20+0200 [-] Log opened.
+2018-02-14 13:47:20+0200 [-] SSHFactory starting on 2222
+2018-02-14 13:47:20+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fcde6a5e1b8>
+2018-02-14 13:47:25+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 13:47:25+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 13:47:25+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:47:25+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:47:25+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 13:47:25+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 13:47:25+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 13:47:27+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 13:47:27+0200 [-] im in else
+2018-02-14 13:47:27+0200 [-] im in else
+2018-02-14 13:47:27+0200 [-] im in else
+2018-02-14 13:47:27+0200 [-] im in else
+2018-02-14 13:47:27+0200 [-] im in else
+2018-02-14 13:47:28+0200 [-] 'support' failed auth 'password'
+2018-02-14 13:47:28+0200 [-] unauthorized login: 
+2018-02-14 13:47:44+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 13:47:52+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 13:47:52+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 13:47:52+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fcde6a5e1b8>
+2018-02-14 13:47:52+0200 [-] Main loop terminated.
+2018-02-14 13:55:27+0200 [-] Log opened.
+2018-02-14 13:55:27+0200 [-] SSHFactory starting on 2222
+2018-02-14 13:55:27+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f8f3e36a1b8>
+2018-02-14 13:55:32+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 13:55:32+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 13:55:32+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:55:32+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:55:32+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 13:55:32+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 13:55:32+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'none'
+2018-02-14 13:55:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' trying auth 'password'
+2018-02-14 13:55:34+0200 [-] im in else
+2018-02-14 13:55:34+0200 [-] im in else
+2018-02-14 13:55:34+0200 [-] im here okay?
+2018-02-14 13:55:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'support' authenticated with 'password'
+2018-02-14 13:55:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 13:55:34+0200 [SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] got channel 'session' request
+2018-02-14 13:55:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] channel open
+2018-02-14 13:55:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 13:55:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] unhandled request for env
+2018-02-14 13:55:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] getting shell
+2018-02-14 13:55:38+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] sending close 0
+2018-02-14 13:55:38+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] remote close
+2018-02-14 13:55:38+0200 [SSHServerTransport,0,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 13:55:38+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 13:55:41+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 13:55:41+0200 [SSHServerTransport,1,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 13:55:41+0200 [SSHServerTransport,1,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:55:41+0200 [SSHServerTransport,1,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:55:41+0200 [SSHServerTransport,1,127.0.0.1] NEW KEYS
+2018-02-14 13:55:41+0200 [SSHServerTransport,1,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 13:55:41+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'ubuntu' trying auth 'none'
+2018-02-14 13:55:44+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'ubuntu' trying auth 'password'
+2018-02-14 13:55:44+0200 [-] im in else
+2018-02-14 13:55:44+0200 [-] im here okay?
+2018-02-14 13:55:44+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'ubuntu' authenticated with 'password'
+2018-02-14 13:55:44+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 13:55:44+0200 [SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] got channel 'session' request
+2018-02-14 13:55:44+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] channel open
+2018-02-14 13:55:44+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 13:55:44+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] unhandled request for env
+2018-02-14 13:55:44+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] getting shell
+2018-02-14 13:55:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] sending close 0
+2018-02-14 13:55:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] remote close
+2018-02-14 13:55:46+0200 [SSHServerTransport,1,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 13:55:46+0200 [SSHServerTransport,1,127.0.0.1] connection lost
+2018-02-14 13:55:50+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 13:55:50+0200 [SSHServerTransport,2,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 13:55:50+0200 [SSHServerTransport,2,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:55:50+0200 [SSHServerTransport,2,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:55:50+0200 [SSHServerTransport,2,127.0.0.1] NEW KEYS
+2018-02-14 13:55:50+0200 [SSHServerTransport,2,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 13:55:50+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' trying auth 'none'
+2018-02-14 13:55:52+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' trying auth 'password'
+2018-02-14 13:55:52+0200 [-] im in else
+2018-02-14 13:55:52+0200 [-] im in else
+2018-02-14 13:55:52+0200 [-] im in else
+2018-02-14 13:55:52+0200 [-] im in else
+2018-02-14 13:55:52+0200 [-] im in else
+2018-02-14 13:55:53+0200 [-] 'root' failed auth 'password'
+2018-02-14 13:55:53+0200 [-] unauthorized login: 
+2018-02-14 13:55:55+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' trying auth 'password'
+2018-02-14 13:55:55+0200 [-] im here okay?
+2018-02-14 13:55:55+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' authenticated with 'password'
+2018-02-14 13:55:55+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 13:55:55+0200 [SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] got channel 'session' request
+2018-02-14 13:55:55+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] channel open
+2018-02-14 13:55:55+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 13:55:55+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] unhandled request for env
+2018-02-14 13:55:55+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] getting shell
+2018-02-14 13:55:58+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] sending close 0
+2018-02-14 13:55:58+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] remote close
+2018-02-14 13:55:58+0200 [SSHServerTransport,2,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 13:55:58+0200 [SSHServerTransport,2,127.0.0.1] connection lost
+2018-02-14 13:57:13+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 13:57:13+0200 [SSHServerTransport,3,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 13:57:13+0200 [SSHServerTransport,3,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:57:13+0200 [SSHServerTransport,3,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 13:57:13+0200 [SSHServerTransport,3,127.0.0.1] NEW KEYS
+2018-02-14 13:57:13+0200 [SSHServerTransport,3,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 13:57:13+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'root' trying auth 'none'
+2018-02-14 13:57:14+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'root' trying auth 'password'
+2018-02-14 13:57:14+0200 [-] im in else
+2018-02-14 13:57:14+0200 [-] im in else
+2018-02-14 13:57:14+0200 [-] im in else
+2018-02-14 13:57:14+0200 [-] im in else
+2018-02-14 13:57:14+0200 [-] im in else
+2018-02-14 13:57:15+0200 [-] 'root' failed auth 'password'
+2018-02-14 13:57:15+0200 [-] unauthorized login: 
+2018-02-14 13:57:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'root' trying auth 'password'
+2018-02-14 13:57:18+0200 [-] im here okay?
+2018-02-14 13:57:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'root' authenticated with 'password'
+2018-02-14 13:57:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 13:57:18+0200 [SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] got channel 'session' request
+2018-02-14 13:57:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] channel open
+2018-02-14 13:57:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 13:57:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] unhandled request for env
+2018-02-14 13:57:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] getting shell
+2018-02-14 13:57:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] sending close 0
+2018-02-14 13:57:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] remote close
+2018-02-14 13:57:20+0200 [SSHServerTransport,3,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 13:57:20+0200 [SSHServerTransport,3,127.0.0.1] connection lost
+2018-02-14 14:07:09+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:07:09+0200 [SSHServerTransport,4,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:07:09+0200 [SSHServerTransport,4,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:07:09+0200 [SSHServerTransport,4,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:07:09+0200 [SSHServerTransport,4,127.0.0.1] NEW KEYS
+2018-02-14 14:07:09+0200 [SSHServerTransport,4,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:07:09+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'ubuntu' trying auth 'none'
+2018-02-14 14:07:11+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'ubuntu' trying auth 'password'
+2018-02-14 14:07:11+0200 [-] im in else
+2018-02-14 14:07:11+0200 [-] im here okay?
+2018-02-14 14:07:11+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'ubuntu' authenticated with 'password'
+2018-02-14 14:07:11+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:07:11+0200 [SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] got channel 'session' request
+2018-02-14 14:07:11+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] channel open
+2018-02-14 14:07:11+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:07:11+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] unhandled request for env
+2018-02-14 14:07:11+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] getting shell
+2018-02-14 14:07:49+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] sending close 0
+2018-02-14 14:07:49+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] remote close
+2018-02-14 14:07:49+0200 [SSHServerTransport,4,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:07:49+0200 [SSHServerTransport,4,127.0.0.1] connection lost
+2018-02-14 14:08:07+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 14:08:07+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 14:08:07+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f8f3e36a1b8>
+2018-02-14 14:08:07+0200 [-] Main loop terminated.
+2018-02-14 14:08:47+0200 [-] Log opened.
+2018-02-14 14:08:47+0200 [-] SSHFactory starting on 2222
+2018-02-14 14:08:47+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fdefb1e51b8>
+2018-02-14 14:08:57+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:08:57+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:08:57+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:08:57+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:08:57+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 14:08:57+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:08:57+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'none'
+2018-02-14 14:08:59+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:09:00+0200 [-] 'bob' failed auth 'password'
+2018-02-14 14:09:00+0200 [-] unauthorized login: 
+2018-02-14 14:09:01+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:09:02+0200 [-] 'bob' failed auth 'password'
+2018-02-14 14:09:02+0200 [-] unauthorized login: 
+2018-02-14 14:09:05+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:09:06+0200 [-] 'bob' failed auth 'password'
+2018-02-14 14:09:06+0200 [-] unauthorized login: 
+2018-02-14 14:09:06+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 14:09:39+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:09:39+0200 [SSHServerTransport,1,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:09:39+0200 [SSHServerTransport,1,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:09:39+0200 [SSHServerTransport,1,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:09:39+0200 [SSHServerTransport,1,127.0.0.1] NEW KEYS
+2018-02-14 14:09:39+0200 [SSHServerTransport,1,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:09:39+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'bob' trying auth 'none'
+2018-02-14 14:09:40+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:09:40+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'bob' authenticated with 'password'
+2018-02-14 14:09:40+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:09:40+0200 [SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] got channel 'session' request
+2018-02-14 14:09:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] channel open
+2018-02-14 14:09:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:09:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] unhandled request for env
+2018-02-14 14:09:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] getting shell
+2018-02-14 14:09:51+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] sending close 0
+2018-02-14 14:09:51+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] remote close
+2018-02-14 14:09:51+0200 [SSHServerTransport,1,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:09:51+0200 [SSHServerTransport,1,127.0.0.1] connection lost
+2018-02-14 14:10:20+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 14:10:20+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 14:10:20+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7fdefb1e51b8>
+2018-02-14 14:10:20+0200 [-] Main loop terminated.
+2018-02-14 14:10:27+0200 [-] Log opened.
+2018-02-14 14:10:27+0200 [-] SSHFactory starting on 2222
+2018-02-14 14:10:27+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f3ac9d28170>
+2018-02-14 14:10:46+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:10:46+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:10:46+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:10:46+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:10:46+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 14:10:46+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:10:46+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'none'
+2018-02-14 14:10:47+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:10:47+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' authenticated with 'password'
+2018-02-14 14:10:47+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:10:47+0200 [SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] got channel 'session' request
+2018-02-14 14:10:47+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] channel open
+2018-02-14 14:10:47+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:10:47+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] unhandled request for env
+2018-02-14 14:10:47+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] getting shell
+2018-02-14 14:10:50+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] sending close 0
+2018-02-14 14:10:50+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] remote close
+2018-02-14 14:10:50+0200 [SSHServerTransport,0,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:10:50+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 14:10:57+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:10:57+0200 [SSHServerTransport,1,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:10:57+0200 [SSHServerTransport,1,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:10:57+0200 [SSHServerTransport,1,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:10:57+0200 [SSHServerTransport,1,127.0.0.1] NEW KEYS
+2018-02-14 14:10:57+0200 [SSHServerTransport,1,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:10:57+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'admin' trying auth 'none'
+2018-02-14 14:10:58+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'admin' trying auth 'password'
+2018-02-14 14:10:58+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'admin' authenticated with 'password'
+2018-02-14 14:10:58+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:10:58+0200 [SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] got channel 'session' request
+2018-02-14 14:10:58+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] channel open
+2018-02-14 14:10:58+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:10:58+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] unhandled request for env
+2018-02-14 14:10:58+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] getting shell
+2018-02-14 14:11:02+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] sending close 0
+2018-02-14 14:11:02+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] remote close
+2018-02-14 14:11:02+0200 [SSHServerTransport,1,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:11:02+0200 [SSHServerTransport,1,127.0.0.1] connection lost
+2018-02-14 14:11:07+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:11:07+0200 [SSHServerTransport,2,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:11:07+0200 [SSHServerTransport,2,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:11:07+0200 [SSHServerTransport,2,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:11:07+0200 [SSHServerTransport,2,127.0.0.1] NEW KEYS
+2018-02-14 14:11:07+0200 [SSHServerTransport,2,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:11:07+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' trying auth 'none'
+2018-02-14 14:11:09+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' trying auth 'password'
+2018-02-14 14:11:09+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'root' authenticated with 'password'
+2018-02-14 14:11:09+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:11:09+0200 [SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] got channel 'session' request
+2018-02-14 14:11:09+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] channel open
+2018-02-14 14:11:09+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:11:09+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] unhandled request for env
+2018-02-14 14:11:09+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] getting shell
+2018-02-14 14:11:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] sending close 0
+2018-02-14 14:11:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,2,127.0.0.1] remote close
+2018-02-14 14:11:20+0200 [SSHServerTransport,2,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:11:20+0200 [SSHServerTransport,2,127.0.0.1] connection lost
+2018-02-14 14:11:24+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:11:24+0200 [SSHServerTransport,3,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:11:24+0200 [SSHServerTransport,3,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:11:24+0200 [SSHServerTransport,3,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:11:24+0200 [SSHServerTransport,3,127.0.0.1] NEW KEYS
+2018-02-14 14:11:24+0200 [SSHServerTransport,3,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:11:24+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'william' trying auth 'none'
+2018-02-14 14:11:26+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'william' trying auth 'password'
+2018-02-14 14:11:26+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'william' authenticated with 'password'
+2018-02-14 14:11:26+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:11:26+0200 [SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] got channel 'session' request
+2018-02-14 14:11:26+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] channel open
+2018-02-14 14:11:26+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:11:26+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] unhandled request for env
+2018-02-14 14:11:26+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] getting shell
+2018-02-14 14:11:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] sending close 0
+2018-02-14 14:11:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] remote close
+2018-02-14 14:11:46+0200 [SSHServerTransport,3,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:11:46+0200 [SSHServerTransport,3,127.0.0.1] connection lost
+2018-02-14 14:11:52+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:11:52+0200 [SSHServerTransport,4,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:11:52+0200 [SSHServerTransport,4,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:11:52+0200 [SSHServerTransport,4,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:11:52+0200 [SSHServerTransport,4,127.0.0.1] NEW KEYS
+2018-02-14 14:11:52+0200 [SSHServerTransport,4,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:11:52+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'charlie' trying auth 'none'
+2018-02-14 14:11:54+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'charlie' trying auth 'password'
+2018-02-14 14:11:54+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'charlie' authenticated with 'password'
+2018-02-14 14:11:54+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:11:54+0200 [SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] got channel 'session' request
+2018-02-14 14:11:54+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] channel open
+2018-02-14 14:11:54+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:11:54+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] unhandled request for env
+2018-02-14 14:11:54+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] getting shell
+2018-02-14 14:12:04+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] sending close 0
+2018-02-14 14:12:04+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] remote close
+2018-02-14 14:12:04+0200 [SSHServerTransport,4,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:12:04+0200 [SSHServerTransport,4,127.0.0.1] connection lost
+2018-02-14 14:12:09+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:12:09+0200 [SSHServerTransport,5,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:12:09+0200 [SSHServerTransport,5,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:12:09+0200 [SSHServerTransport,5,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:12:09+0200 [SSHServerTransport,5,127.0.0.1] NEW KEYS
+2018-02-14 14:12:09+0200 [SSHServerTransport,5,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:12:09+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] 'sales' trying auth 'none'
+2018-02-14 14:12:10+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] 'sales' trying auth 'password'
+2018-02-14 14:12:11+0200 [-] 'sales' failed auth 'password'
+2018-02-14 14:12:11+0200 [-] unauthorized login: 
+2018-02-14 14:12:13+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] 'sales' trying auth 'password'
+2018-02-14 14:12:14+0200 [-] 'sales' failed auth 'password'
+2018-02-14 14:12:14+0200 [-] unauthorized login: 
+2018-02-14 14:12:14+0200 [SSHServerTransport,5,127.0.0.1] connection lost
+2018-02-14 14:12:18+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:12:18+0200 [SSHServerTransport,6,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:12:18+0200 [SSHServerTransport,6,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:12:18+0200 [SSHServerTransport,6,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:12:18+0200 [SSHServerTransport,6,127.0.0.1] NEW KEYS
+2018-02-14 14:12:18+0200 [SSHServerTransport,6,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:12:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] 'bob' trying auth 'none'
+2018-02-14 14:12:19+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:12:19+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] 'bob' authenticated with 'password'
+2018-02-14 14:12:19+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:12:19+0200 [SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] got channel 'session' request
+2018-02-14 14:12:19+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] channel open
+2018-02-14 14:12:19+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:12:19+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] unhandled request for env
+2018-02-14 14:12:19+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] getting shell
+2018-02-14 14:12:29+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] sending close 0
+2018-02-14 14:12:29+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] remote close
+2018-02-14 14:12:29+0200 [SSHServerTransport,6,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:12:29+0200 [SSHServerTransport,6,127.0.0.1] connection lost
+2018-02-14 14:12:32+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:12:32+0200 [SSHServerTransport,7,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:12:32+0200 [SSHServerTransport,7,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:12:32+0200 [SSHServerTransport,7,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:12:32+0200 [SSHServerTransport,7,127.0.0.1] NEW KEYS
+2018-02-14 14:12:32+0200 [SSHServerTransport,7,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:12:32+0200 [SSHService 'ssh-userauth' on SSHServerTransport,7,127.0.0.1] 'root' trying auth 'none'
+2018-02-14 14:12:33+0200 [SSHService 'ssh-userauth' on SSHServerTransport,7,127.0.0.1] 'root' trying auth 'password'
+2018-02-14 14:12:33+0200 [SSHService 'ssh-userauth' on SSHServerTransport,7,127.0.0.1] 'root' authenticated with 'password'
+2018-02-14 14:12:33+0200 [SSHService 'ssh-userauth' on SSHServerTransport,7,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:12:33+0200 [SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] got channel 'session' request
+2018-02-14 14:12:33+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] channel open
+2018-02-14 14:12:33+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:12:33+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] unhandled request for env
+2018-02-14 14:12:33+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] getting shell
+2018-02-14 14:15:05+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] sending close 0
+2018-02-14 14:15:05+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,7,127.0.0.1] remote close
+2018-02-14 14:15:05+0200 [SSHServerTransport,7,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:15:05+0200 [SSHServerTransport,7,127.0.0.1] connection lost
+2018-02-14 14:15:13+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 14:15:13+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 14:15:13+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f3ac9d28170>
+2018-02-14 14:15:13+0200 [-] Main loop terminated.
+2018-02-14 14:15:19+0200 [-] Log opened.
+2018-02-14 14:15:19+0200 [-] SSHFactory starting on 2222
+2018-02-14 14:15:19+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f446a0bc170>
+2018-02-14 14:15:33+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:15:33+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:15:33+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:15:33+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:15:33+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 14:15:33+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:15:33+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'sales' trying auth 'none'
+2018-02-14 14:15:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'sales' trying auth 'password'
+2018-02-14 14:15:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'sales' authenticated with 'password'
+2018-02-14 14:15:34+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:15:34+0200 [SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] got channel 'session' request
+2018-02-14 14:15:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] channel open
+2018-02-14 14:15:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:15:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] unhandled request for env
+2018-02-14 14:15:34+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] getting shell
+2018-02-14 14:16:00+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] sending close 0
+2018-02-14 14:16:00+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] remote close
+2018-02-14 14:16:00+0200 [SSHServerTransport,0,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:16:00+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 14:16:05+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:16:05+0200 [SSHServerTransport,1,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:16:05+0200 [SSHServerTransport,1,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:16:05+0200 [SSHServerTransport,1,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:16:05+0200 [SSHServerTransport,1,127.0.0.1] NEW KEYS
+2018-02-14 14:16:05+0200 [SSHServerTransport,1,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:16:05+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'oracle' trying auth 'none'
+2018-02-14 14:16:06+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'oracle' trying auth 'password'
+2018-02-14 14:16:06+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'oracle' authenticated with 'password'
+2018-02-14 14:16:06+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:16:06+0200 [SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] got channel 'session' request
+2018-02-14 14:16:06+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] channel open
+2018-02-14 14:16:06+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:16:06+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] unhandled request for env
+2018-02-14 14:16:06+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] getting shell
+2018-02-14 14:17:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] sending close 0
+2018-02-14 14:17:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] remote close
+2018-02-14 14:17:20+0200 [SSHServerTransport,1,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:17:20+0200 [SSHServerTransport,1,127.0.0.1] connection lost
+2018-02-14 14:17:37+0200 [-] Received SIGTERM, shutting down.
+2018-02-14 14:17:37+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 14:17:37+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f446a0bc170>
+2018-02-14 14:17:37+0200 [-] Main loop terminated.
+2018-02-14 14:17:39+0200 [-] Log opened.
+2018-02-14 14:17:39+0200 [-] SSHFactory starting on 2222
+2018-02-14 14:17:39+0200 [-] Starting factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f334441fd40>
+2018-02-14 14:17:45+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:17:45+0200 [SSHServerTransport,0,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:17:45+0200 [SSHServerTransport,0,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:17:45+0200 [SSHServerTransport,0,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:17:45+0200 [SSHServerTransport,0,127.0.0.1] NEW KEYS
+2018-02-14 14:17:45+0200 [SSHServerTransport,0,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:17:45+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'none'
+2018-02-14 14:17:46+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:17:46+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] 'bob' authenticated with 'password'
+2018-02-14 14:17:46+0200 [SSHService 'ssh-userauth' on SSHServerTransport,0,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:17:46+0200 [SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] got channel 'session' request
+2018-02-14 14:17:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] channel open
+2018-02-14 14:17:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:17:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] unhandled request for env
+2018-02-14 14:17:46+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] getting shell
+2018-02-14 14:17:53+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] sending close 0
+2018-02-14 14:17:54+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,0,127.0.0.1] remote close
+2018-02-14 14:17:54+0200 [SSHServerTransport,0,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:17:54+0200 [SSHServerTransport,0,127.0.0.1] connection lost
+2018-02-14 14:17:57+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:17:57+0200 [SSHServerTransport,1,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:17:57+0200 [SSHServerTransport,1,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:17:57+0200 [SSHServerTransport,1,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:17:57+0200 [SSHServerTransport,1,127.0.0.1] NEW KEYS
+2018-02-14 14:17:57+0200 [SSHServerTransport,1,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:17:57+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'sales' trying auth 'none'
+2018-02-14 14:17:57+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'sales' trying auth 'password'
+2018-02-14 14:17:58+0200 [-] 'sales' failed auth 'password'
+2018-02-14 14:17:58+0200 [-] unauthorized login: 
+2018-02-14 14:17:59+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'sales' trying auth 'password'
+2018-02-14 14:17:59+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] 'sales' authenticated with 'password'
+2018-02-14 14:17:59+0200 [SSHService 'ssh-userauth' on SSHServerTransport,1,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:17:59+0200 [SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] got channel 'session' request
+2018-02-14 14:17:59+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] channel open
+2018-02-14 14:17:59+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:17:59+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] unhandled request for env
+2018-02-14 14:17:59+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] getting shell
+2018-02-14 14:18:06+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] sending close 0
+2018-02-14 14:18:06+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,1,127.0.0.1] remote close
+2018-02-14 14:18:06+0200 [SSHServerTransport,1,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:18:06+0200 [SSHServerTransport,1,127.0.0.1] connection lost
+2018-02-14 14:18:10+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:18:10+0200 [SSHServerTransport,2,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:18:10+0200 [SSHServerTransport,2,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:18:10+0200 [SSHServerTransport,2,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:18:10+0200 [SSHServerTransport,2,127.0.0.1] NEW KEYS
+2018-02-14 14:18:10+0200 [SSHServerTransport,2,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:18:10+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'cahrlie' trying auth 'none'
+2018-02-14 14:18:12+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'cahrlie' trying auth 'password'
+2018-02-14 14:18:13+0200 [-] 'cahrlie' failed auth 'password'
+2018-02-14 14:18:13+0200 [-] unauthorized login: 
+2018-02-14 14:18:15+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'cahrlie' trying auth 'password'
+2018-02-14 14:18:16+0200 [-] 'cahrlie' failed auth 'password'
+2018-02-14 14:18:16+0200 [-] unauthorized login: 
+2018-02-14 14:18:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,2,127.0.0.1] 'cahrlie' trying auth 'password'
+2018-02-14 14:18:19+0200 [-] 'cahrlie' failed auth 'password'
+2018-02-14 14:18:19+0200 [-] unauthorized login: 
+2018-02-14 14:18:19+0200 [SSHServerTransport,2,127.0.0.1] connection lost
+2018-02-14 14:18:39+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:18:39+0200 [SSHServerTransport,3,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:18:39+0200 [SSHServerTransport,3,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:18:39+0200 [SSHServerTransport,3,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:18:39+0200 [SSHServerTransport,3,127.0.0.1] NEW KEYS
+2018-02-14 14:18:39+0200 [SSHServerTransport,3,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:18:39+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'charlie' trying auth 'none'
+2018-02-14 14:18:40+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'charlie' trying auth 'password'
+2018-02-14 14:18:40+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] 'charlie' authenticated with 'password'
+2018-02-14 14:18:40+0200 [SSHService 'ssh-userauth' on SSHServerTransport,3,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:18:40+0200 [SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] got channel 'session' request
+2018-02-14 14:18:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] channel open
+2018-02-14 14:18:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:18:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] unhandled request for env
+2018-02-14 14:18:40+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] getting shell
+2018-02-14 14:18:52+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] sending close 0
+2018-02-14 14:18:52+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,3,127.0.0.1] remote close
+2018-02-14 14:18:52+0200 [SSHServerTransport,3,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:18:52+0200 [SSHServerTransport,3,127.0.0.1] connection lost
+2018-02-14 14:45:17+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:45:17+0200 [SSHServerTransport,4,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:45:17+0200 [SSHServerTransport,4,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:45:17+0200 [SSHServerTransport,4,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:45:17+0200 [SSHServerTransport,4,127.0.0.1] NEW KEYS
+2018-02-14 14:45:17+0200 [SSHServerTransport,4,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:45:17+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'charlie' trying auth 'none'
+2018-02-14 14:45:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'charlie' trying auth 'password'
+2018-02-14 14:45:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] 'charlie' authenticated with 'password'
+2018-02-14 14:45:18+0200 [SSHService 'ssh-userauth' on SSHServerTransport,4,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:45:18+0200 [SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] got channel 'session' request
+2018-02-14 14:45:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] channel open
+2018-02-14 14:45:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:45:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] unhandled request for env
+2018-02-14 14:45:18+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] getting shell
+2018-02-14 14:45:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] sending close 0
+2018-02-14 14:45:20+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,4,127.0.0.1] remote close
+2018-02-14 14:45:20+0200 [SSHServerTransport,4,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:45:20+0200 [SSHServerTransport,4,127.0.0.1] connection lost
+2018-02-14 14:45:24+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:45:24+0200 [SSHServerTransport,5,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:45:24+0200 [SSHServerTransport,5,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:45:24+0200 [SSHServerTransport,5,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:45:24+0200 [SSHServerTransport,5,127.0.0.1] NEW KEYS
+2018-02-14 14:45:24+0200 [SSHServerTransport,5,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:45:24+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] 'bob' trying auth 'none'
+2018-02-14 14:45:25+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] 'bob' trying auth 'password'
+2018-02-14 14:45:25+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] 'bob' authenticated with 'password'
+2018-02-14 14:45:25+0200 [SSHService 'ssh-userauth' on SSHServerTransport,5,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:45:25+0200 [SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] got channel 'session' request
+2018-02-14 14:45:25+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] channel open
+2018-02-14 14:45:25+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:45:25+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] unhandled request for env
+2018-02-14 14:45:25+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] getting shell
+2018-02-14 14:45:30+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] sending close 0
+2018-02-14 14:45:30+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,5,127.0.0.1] remote close
+2018-02-14 14:45:30+0200 [SSHServerTransport,5,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:45:30+0200 [SSHServerTransport,5,127.0.0.1] connection lost
+2018-02-14 14:45:37+0200 [twisted.conch.ssh.factory.SSHFactory] disabling non-fixed-group key exchange algorithms because we cannot find moduli file
+2018-02-14 14:45:37+0200 [SSHServerTransport,6,127.0.0.1] kex alg, key alg: 'ecdh-sha2-nistp256' 'ssh-rsa'
+2018-02-14 14:45:37+0200 [SSHServerTransport,6,127.0.0.1] outgoing: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:45:37+0200 [SSHServerTransport,6,127.0.0.1] incoming: 'aes128-ctr' 'hmac-sha2-256' 'none'
+2018-02-14 14:45:37+0200 [SSHServerTransport,6,127.0.0.1] NEW KEYS
+2018-02-14 14:45:37+0200 [SSHServerTransport,6,127.0.0.1] starting service 'ssh-userauth'
+2018-02-14 14:45:37+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] 'sales' trying auth 'none'
+2018-02-14 14:45:39+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] 'sales' trying auth 'password'
+2018-02-14 14:45:39+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] 'sales' authenticated with 'password'
+2018-02-14 14:45:39+0200 [SSHService 'ssh-userauth' on SSHServerTransport,6,127.0.0.1] starting service 'ssh-connection'
+2018-02-14 14:45:39+0200 [SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] got channel 'session' request
+2018-02-14 14:45:39+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] channel open
+2018-02-14 14:45:39+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] pty request: 'xterm-256color' (25, 124, 0, 0)
+2018-02-14 14:45:39+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] unhandled request for env
+2018-02-14 14:45:39+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] getting shell
+2018-02-14 14:45:52+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] sending close 0
+2018-02-14 14:45:52+0200 [SSHChannel session (0) on SSHService 'ssh-connection' on SSHServerTransport,6,127.0.0.1] remote close
+2018-02-14 14:45:52+0200 [SSHServerTransport,6,127.0.0.1] Got remote error, code 11
+	reason: disconnected by user
+2018-02-14 14:45:52+0200 [SSHServerTransport,6,127.0.0.1] connection lost
+2018-02-14 14:46:41+0200 [-] Received SIGINT, shutting down.
+2018-02-14 14:46:41+0200 [twisted.conch.ssh.factory.SSHFactory] (TCP Port 2222 Closed)
+2018-02-14 14:46:41+0200 [-] Stopping factory <twisted.conch.ssh.factory.SSHFactory instance at 0x7f334441fd40>
+2018-02-14 14:46:41+0200 [-] Main loop terminated.

@@ -65,7 +65,7 @@ Xsweet uses Docker to be deployed, Configured, and installed on any machine whet
 **All the attacker’s interaction with the honeypot whether he got access or not is logged in three files:**
 
 - `attempts.txt`: stores the (username:password) combination with the timing.
-- `victim-ActualIPofTheAttacker.txt`(Example: victim-10.10.10.10.txt): is the file where the executed commands of the attacker are logged after gaining access to the honeypot.
+- `victim-*ActualIPofTheAttacker*.txt`(Example: victim-10.10.10.10.txt): is the file where the executed commands of the attacker are logged after gaining access to the honeypot.
 - `xsweet.log`: the file where the IP of the attacker and the key exchage is logged.
 
 **If you downloaded Xsweet with Docker, you'll get it automatically configured with Kibana, Logstash and Elastic Search.**
