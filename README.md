@@ -88,7 +88,7 @@ An attacker tries to compromise our system with SSH bruteforcing, whether he con
 
 ## Video Demo
 
-[![xsweet demo youtube video](https://img.youtube.com/vi/SGwpJwFwJ-A/0.jpg)](https://www.youtube.com/watch?v=SGwpJwFwJ-A)
+[![xsweet demo youtube video](https://image.ibb.co/jWgVWS/video_demo.png)](https://www.youtube.com/watch?v=SGwpJwFwJ-A)
 
 
 
