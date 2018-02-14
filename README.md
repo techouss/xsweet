@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Xsweet is a medium interaction SSH honeypot written in python using the python twisted conch. Xsweet uses its own twisted Conch SSH protocol with the goal to log brute force attacks including username and password successful and failed attempts, collect session command logs, intelligence of the methods and motives of the attacker targeting your servers and the location of the IP that we are receiving the attack from.
+Xsweet is a medium interaction SSH honeypot written in python using python twisted conch. Xsweet uses its own twisted Conch SSH protocol with the goal to log brute force attacks including username and password successful and failed attempts, collect session command logs, intelligence of the methods and motives of the attacker targeting your servers and the location of the IP that we are receiving the attack from.
 
 Xsweet simulates a real SSH environment and a real shell environment. Xsweet will listen on port 2222 but to make it accessible by the attackers, we will use iptables to route attacker's SSH connection to 22. When an attacker tries to connect to our servers, our honeypotwill be ready for them. It will authenticate users by comparing fake usernames and passwords that are mostly used by SSH brute forcing lists so that the attackers get trapped easily in our honeypot with a simulated shell. After the attackers gets access to the fake system, he can issuecommands that will be logged completely. Xsweet fake system responds to these commands with fake strings that looks completely legitimate to the attacker that he won’t notice he is in a fakesystem.
 
@@ -24,7 +24,7 @@ After I rented some cloud servers online to test my projects on them,  I  saw a 
 ## Installation
 
 - You need first to install all the dependencies and utilities mentioned below in the Requirements section.
-- Clone the repository git clone `https://github.com/techouss/xsweet.git` and navigate to the direcotry `cd xsweet`
+- Clone the repository `git clone https://github.com/techouss/xsweet.git` and navigate to the direcotry `cd xsweet`
 - Strat xsweet `python xsweet.py &`
 - To run it on port 22 because it is by default on port 2222
 `sudo iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222`
@@ -64,7 +64,7 @@ Xsweet uses Docker to be deployed, Configured, and installed on any machine whet
 
 **All the attacker’s interaction with the honeypot whether he got access or not is logged in three files:**
 
-- `attempts.txt`: stores the (username:password) combination with the timing.
+- `attempts.txt`: stores the (username:password) combination attempts with the timing.
 - `victim-ActualIPofTheAttacker.txt`(Example: victim-10.10.10.10.txt): is the file where the executed commands of the attacker are logged after gaining access to the honeypot.
 - `xsweet.log`: the file where the IP of the attacker and the key exchage is logged.
 
@@ -79,6 +79,12 @@ When we collect all these log files, Logstash takes them as input and parses and
 An attacker tries to compromise our system with SSH bruteforcing, whether he connects or not everything is logged, if he gains access,the commands used inside the session are logged. After everything is logged, these log files are fetched to Logstash. Logstash takes care of them as mentioned in the previous model routing.
 
 ![Overall Xsweet system](https://image.ibb.co/mho937/xsweet_image2.png "ELK")
+
+## End Result Dashboard in Kibana 
+
+![Dashboard](https://image.ibb.co/gBTDJ7/dashboard1.png "ELK")
+
+![Dashboard](https://image.ibb.co/f8CvWS/dashboard2.png "ELK")
 
 ## Video Demo
 
