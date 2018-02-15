@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Xsweet is a medium interaction SSH honeypot written in python using python twisted conch. Xsweet uses its own twisted Conch SSH protocol with the goal to log brute force attacks including username and password successful and failed attempts, collect session command logs, intelligence of the methods and motives of the attacker targeting your servers and the location of the IP that we are receiving the attack from.
+Xsweet is a medium interaction SSH honeypot which is based on kojoney2, but way different. Xsweet is written in python using python twisted conch. Xsweet uses its own twisted Conch SSH protocol with the goal to log brute force attacks including username and password successful and failed attempts, collect session command logs, intelligence of the methods and motives of the attacker targeting your servers and the location of the IP that we are receiving the attack from.
 
 Xsweet simulates a real SSH environment and a real shell environment. Xsweet will listen on port 2222 but to make it accessible by the attackers, we will use iptables to route attacker's SSH connection to 22. When an attacker tries to connect to our servers, our honeypotwill be ready for them. It will authenticate users by comparing fake usernames and passwords that are mostly used by SSH brute forcing lists so that the attackers get trapped easily in our honeypot with a simulated shell. After the attackers gets access to the fake system, he can issuecommands that will be logged completely. Xsweet fake system responds to these commands with fake strings that looks completely legitimate to the attacker that he won’t notice he is in a fakesystem.
 
@@ -19,7 +19,7 @@ After I rented some cloud servers online to test my projects on them,  I  saw a 
 - Used Logstash, Elasticsearch and Kibana to search and visualize the logged data in a neat way.
 - Fake filesystem with the ability to add/remove files. A full fake filesystem resembling an Ubuntu 16.04 installation is included.
 - Possibility of adding fake file contents so the attacker can cat files such as /etc/passwd. Only minimal file contents are included.
-- Attempts and Session logs stored in an UML Compatible format for easy replay with original timings.
+- Attempts and Session logs stored with UTC timing Compatible format for easy viewing globally
 
 ## Installation
 
